@@ -795,11 +795,12 @@ label {
   }
 }
 
+
 .about-row, .help-row {
   color: #444444;
   padding: 10px 5px;
   width: 100%;
-  margin-left: 0;
+  margin-left: 0 !important;
   border-bottom: 1px solid #ADADAD;
 }
 
