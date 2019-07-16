@@ -61,10 +61,7 @@ export function HomePage({
     <article>
       <Helmet>
         <title>Home Page</title>
-        <meta
-          name="description"
-          content="ReRefill Homepage"
-        />
+        <meta name="description" content="ReRefill Homepage" />
       </Helmet>
       <div>
         <CenteredSection>

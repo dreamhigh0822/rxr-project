@@ -29,13 +29,17 @@ module.exports = options => ({
       },
       {
         test: /\.scss$/,
-          use: [{
-            loader: "style-loader"
-          }, {
-            loader: "css-loader" 
-          }, {
-            loader: "sass-loader"
-          }]
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'sass-loader',
+          },
+        ],
       },
       {
         // Preprocess our own .css files

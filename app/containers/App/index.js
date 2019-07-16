@@ -31,10 +31,7 @@ const AppWrapper = styled.div`
 export default function App() {
   return (
     <AppWrapper>
-      <Helmet
-        titleTemplate="%s - RxRefill"
-        defaultTitle="RxRefill"
-      >
+      <Helmet titleTemplate="%s - RxRefill" defaultTitle="RxRefill">
         <meta name="description" content="RexRefill" />
       </Helmet>
       <Header />

@@ -14,8 +14,7 @@ export default defineMessages({
   },
   startProjectMessage: {
     id: `${scope}.start_project.message`,
-    defaultMessage:
-      'Home Page',
+    defaultMessage: 'Home Page',
   },
   trymeHeader: {
     id: `${scope}.tryme.header`,
