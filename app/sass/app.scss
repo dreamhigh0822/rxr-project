@@ -1,5 +1,12 @@
+@import "global";
+@import "rxr";
+@import "veteran/homeLinks";
+@import "veteran/masterView";
+@import "veteran/RxTrackingDetail";
+
 html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
+

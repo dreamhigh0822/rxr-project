@@ -1,0 +1,36 @@
+.status-value {
+  //color: rgb(187, 131, 95);
+}
+.med-container {
+  border-bottom: 1px solid #cccccc;
+  padding: 10px 25px;
+  background-color: white;
+}
+
+.zebra-row .row {
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.important-footer{ text-align: center;}
+
+.text-xl { font-size: 45px;}
+
+.list-count{
+  font-weight:bold;
+  text-align: center;
+  width: 100%;
+  padding: 3px 0;
+}
+
+
+
+@media (min-width: $tablet) {
+  .home-button h3{
+    margin: 10px 20px 5px 75px;
+  }
+  .home-button-icon {
+    display:inline-block;
+    height:45px;
+  }
+}

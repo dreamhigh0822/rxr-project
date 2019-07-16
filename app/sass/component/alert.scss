@@ -1,0 +1,113 @@
+.alert {
+  margin: 0 20px 20px 20px;
+  padding-bottom: 20px;
+}
+
+.alert-banner {
+  margin-top: 20px;
+}
+
+.alert-icon {
+  width: 25px;
+  height: 25px;
+  float: left;
+}
+
+.alert-text {
+  margin-left: 40px;
+  padding: 0;
+  border: 1px;
+  font-size: 1.4rem;
+  p {
+    margin-left: 0;
+    margin-right: 0;
+    &.statement {
+      font-size: 1.7rem;
+    }
+  }
+  span {
+    display: inline;
+  }
+  .err, .help {
+    border-top: 1px dotted #adabab;
+    padding-top: 10px;
+  }
+}
+
+@media (min-width: 545px ) and (max-width: 930px) {
+  .alert-text {
+    span {
+      display: block;
+    }
+  }
+}
+
+/* Error Message Styles */
+
+.alert-danger {
+  color: #000000;
+  background-color: $error-bkgnd;
+  border: 1px solid $error;
+}
+
+.alert-danger {
+  ul {
+    margin-top: 15px; // replaces top margin on li
+  }
+}
+
+.has-error .form-control, .has-error .input-group-addon, .has-error .form-control-feedback {    /* Error border around the form elements */
+  border-color: $error;
+}
+
+/* End of Error Message Styles */
+
+/*  Sucess Message Styles */
+
+.alert-success {
+  color: #000000;
+  background-color: $success-bkgnd;
+  border: 1px solid $success;
+}
+
+/* End of Success Message Styles */
+
+/* Homepage Alerts & Reminders */
+
+.alert-warning {
+  background-color: $warning-bkgnd;
+  border: 1px solid $warning;
+  color: #000000;
+}
+
+.close {      /* overwriting Bootstrap style to use different close icon on reminder alerts */
+  text-shadow: none;
+  filter: alpha(opacity=100);
+  opacity: 1;
+}
+
+.close:hover,
+.close:focus {      /* overwriting Bootstrap style to use different close icon on reminder alerts */
+  filter: alpha(opacity=100);
+  opacity: 1;
+}
+
+.alert-dismissable .close,
+.alert-dismissible .close {
+  position: relative;
+  top: -14px;
+  right: -34px;
+}
+
+.alert-delete {
+  width: 44px;
+  height: 44px;
+  padding: 12px;
+  float: right;
+}
+
+/* End of Homepage Alerts & Reminders Styles */
+
+.alert-delete-confirm {
+  padding-top: 40px;
+}

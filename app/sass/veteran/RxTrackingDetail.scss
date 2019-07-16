@@ -1,0 +1,105 @@
+@media (min-width: $tablet) {
+  .content h2.track-page-header {
+    padding-bottom: 11px;
+  }
+}
+
+h3.track-header {
+  background-color: #4d4E53;
+  font-weight: bold;
+  color: #FFFFFF;
+  font-size: 1.4rem;
+  padding: 5px 5px 5px 20px;
+  margin: -10px 0 5px 0;
+  border: 0;
+}
+
+.track-details {
+  padding: 0px 20px;
+}
+
+.track-details .row {
+  border-bottom: 1px solid #CCCCCC;
+  padding-bottom: 3px;
+  margin-bottom: 3px;
+}
+
+.track-details .no-border {
+  border-bottom: 0px;
+}
+
+.track-details a {
+  color: #0B4F78;
+  font-weight: bold;
+  margin: 0 15px;
+}
+
+a.tracking-url {
+  margin: 0;
+}
+
+.other-shipments {
+  border: 0;
+  margin-top: -20px;
+}
+
+.other-shipments button {
+    color: #0B4F78;
+    font-weight: bold;
+    font-size: 1.4rem;
+    border: 0px;
+    background-color: transparent;
+    margin: 0px;
+    padding: 0px;
+}
+
+.other-shipments span {
+    padding-left: 5px;
+}
+
+#past-shipments {
+  margin-top: 10px;
+}
+
+/* spinner icon for View Image links */
+.spinner-box-background {   /*  to make it look like a modal  */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0.5;
+  z-index: 199;
+  display: none;
+}
+
+.spinner-box {
+  width: 300px;
+  height: 300px;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  margin-left: -150px; /* Half of the width, with left: 50% will align the box centered horizontally */
+  text-align: center;
+  opacity: 1.0;
+  z-index: 200;
+  display: none;
+}
+
+.spinner-box img {
+  height: 295px;
+}
+
+.has-spinner.active .spinner-box-background, .has-spinner.active .spinner-box {
+  display: inline-block;
+}
+
+.no-other-prescriptions {
+  font-style: italic;
+  padding: 5px 0 5px 20px;
+  border-top: 1px solid #CCCCCC;
+  border-bottom: 1px solid #CCCCCC;
+}

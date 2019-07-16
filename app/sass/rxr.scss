@@ -1,0 +1,439 @@
+/*  Desktop Navigation Dropdown */
+nav#menu-list .dropdown-menu {
+  right: 167px;
+}
+
+nav#menu-list{
+  margin-left: 200px;
+}
+
+/* Phone Navigation Hamburger Menu */
+nav#hamburger-list {
+  display: inline;
+}
+
+.titleAreaLogo img{
+  display:none;
+}
+
+@media (min-width: $tablet) {
+  nav#menu-list {
+    display: block;
+  }
+  nav#hamburger-list {
+    display: none;
+  }
+  nav#hamburger-list img#hamburger-off, nav#hamburger-list img#hamburger-on {
+    padding: 7px 5px;  /* makes image size 45px x 30px but tapable area minimum is 44px x 44px */
+    margin: 10px;
+  }
+  nav#hamburger-list .dropdown-menu li {
+    font-size: 1.6rem;
+  }
+  nav#hamburger-list .dropdown-menu img {
+    width: 12px;
+    height: 25px;
+    margin-top: -1px;
+  }
+
+  .titleAreaLogo img{
+    display:block;
+    float:left;
+    width:47px;
+    height:47px;
+    margin: 7px -10px 0 20px;
+  }
+}
+
+
+.zebra-row .row:nth-child(odd) {
+  background-color: #FFFFFF;
+
+}
+
+.zebra-row .row:nth-child(even) {
+  background-color: #F1F1F1;
+}
+
+.modal-title-area {
+  background-color: $app-primary;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, $app-title1), color-stop(1, $app-title2));
+  background-image: -o-linear-gradient(bottom, $app-title1 0%, $app-title2 100%);
+  background-image: -moz-linear-gradient(bottom, $app-title1 0%, $app-title2 100%);
+  background-image: -webkit-linear-gradient(bottom, $app-title1 0%, $app-title2 100%);
+  background-image: -ms-linear-gradient(bottom, $app-title1 0%, $app-title2 100%);
+  background-image: linear-gradient(to bottom, $app-title1 0%, $app-title2 100%);
+  box-shadow: 3px 5.196px 16px 0px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid $app-title3;
+  padding: 10px;
+  display: inline-block;
+  width: 100%;
+}
+
+.modal-title-area h4 {
+  color:white;
+}
+
+/* Overwrite global css widths due to included TDD */
+.help-body {
+  p > span {
+    display: block;
+  }
+}
+@media (min-width: 545px ) and (max-width: 1115px) {
+  .alert-text {
+    span {
+      display: block;
+    }
+  }
+}
+
+/* Links page to MHV */
+.linksBody{
+  p{
+    font-size:1.1em;
+  }
+}
+.popover-content, .icon-info-popover {
+  ul {
+    margin-left: -20px;
+    li {
+      margin-left: -15px;
+    }
+  }
+}
+.icon-info-popover {
+  padding: 15px 14px;
+  cursor: pointer;
+}
+.icon-info-popover img {
+  height: 18px;
+  width: 18px;
+}
+.list-group-item-override{
+  font-size:1.2em;
+  padding-left:20px;
+  border-left:none;
+  border-right:none;
+  border-radius: 0;
+  -moz-border-radius : 0;
+  -webkit-border-radius : 0;
+}
+.linksDescription{
+  display:none;
+}
+
+@media (min-width: $tablet) {
+  .medical-info {
+    display: none;
+  }
+  .icon-info-popover{
+    display:none;
+    &__default {
+      display: inline-block;
+    }
+  }
+  .linksDescription{
+    display: block;
+    font-size:0.8em;
+    sup {
+      font-size: 1.3rem;
+    }
+  }
+  .list-group-item-override {
+    font-size: 1.4em;
+  }
+}
+
+.panel img {
+  margin-left: 10px;
+  width: 20px;
+  height: 12px;
+}
+
+.panel a.collapsed img.panel-close, .panel a img.panel-close, .panel button.collapsed img.panel-close, .panel button img.panel-close {
+  display: none;
+}
+
+.panel a.collapsed img.panel-open, .panel a img.panel-open, .panel button.collapsed img.panel-open, .panel button img.panel-open {
+  display: inline-block;
+}
+
+.panel a img.panel-close, .panel button img.panel-close {
+    display: inline-block;
+}
+.panel a img.panel-open, .panel button img.panel-open {
+    display: none;
+}
+
+.panel a.collapsed img#panel-close, .panel a img#panel-close, .panel button.collapsed img#panel-close, .panel button img#panel-close {
+  display: none;
+}
+
+.panel a.collapsed img#panel-open, .panel a img#panel-open, .panel button.collapsed img#panel-open, .panel button img#panel-open {
+  display: inline-block;
+}
+
+.panel a img#panel-close, .panel button img#panel-close {
+    display: inline-block;
+}
+.panel a img#panel-open, .panel button img#panel-open {
+    display: none;
+}
+
+.rx-list {
+  margin: 0px;
+}
+
+.rx-list a {
+  margin-left: -4px;
+}
+
+.rx-details .row {
+  padding: 5px 6px;
+  border-bottom: 1px solid #CCCCCC;
+}
+
+.rx-details h4 {
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-left: 6px;
+}
+
+.spinner-background {
+  background: url('../img/loading_spinner.gif');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 175px;
+  min-height: 175px;  /* make the container big enough to hold the spinner */
+}
+
+.refill-request {
+  text-align: center;
+  font-size: 1.4rem;
+  padding-top: 40px;
+}
+
+.refill-request img {
+  width: 175px;  /* spinner is same size as spinner in .spinner-background */
+  margin-bottom: 25px;
+}
+
+.spinner-image {
+  position: absolute;
+  top: 25%;
+  left: 45%;
+}
+
+.mhevet {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.content h2 {   /* Overwriting global style to accomodate Sort and Back buttons in phone view */
+  padding: 22px 20px 17px 20px;
+}
+
+/*  Buttons Displayed Next to Page Title */
+
+.title-back-btn {
+  border: 0;
+  border-right: 1px solid #CCCCCC;
+  background-color: transparent;
+  padding: 16px;
+  float: left;
+  margin-right: 10px;
+  margin-top: 3px;
+}
+
+.title-back-btn img {
+  height: 20px;
+  width: 10px;
+}
+
+a.title-back-btn {     /*  When Back is an anchor instead of a button, needs to be moved slightly down   */
+  position: relative;
+  top: 3px;
+  padding-bottom: 14px;
+}
+
+@media (min-width: $tablet) {
+  .title-back-btn {
+     border: 0;
+     margin-right: 0;
+     padding-bottom: 4px;
+  }
+
+  .title-back-btn img {
+    height: 30px;
+    width: 15px;
+  }
+
+  a.title-back-btn {     /*  When Back is an anchor instead of a button, reset back to top in tablet & desktop   */
+    top: 0;
+    padding-bottom: 11px;
+  }
+}
+
+/*  Sort Dropdown Displayed Next to Page Title */
+
+
+#sortMenu {
+  text-align: right;
+  font-size: 1.4rem;
+  margin-top: -49px;
+  left: -20px;
+}
+
+#sortMenu button {
+  border: 0;
+  border-left: 1px solid #CCCCCC;
+  background-color: transparent;
+  color: #19597F;
+  padding: 14px 15px;
+  margin: -10px -20px -11px 7px;
+}
+
+#sortMenu img {
+  height: 7px;
+  width: 13px;
+}
+
+#sortMenu a {
+  padding: 24px 20px 12px 0px;     /* makes sure the tapable area minimum is 44px x 44px */
+  margin-right: 0px;
+  display: inline-block;
+  margin-top: -35px;
+  width: 200px;
+}
+
+#sortMenu img#sort-off {
+  display: inline-block;
+}
+
+#sortMenu img#sort-on {
+  display: none;
+}
+
+#sortMenu.open img#sort-off {
+  display: none;
+}
+
+#sortMenu.open img#sort-on {
+  display: inline-block;
+}
+
+#sortMenu.open button {
+  background-color: #FFFFFF;
+}
+
+#sortMenu .dropdown-menu {
+  background-color: #FFFFFF;
+  border: 1px solid $border;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  padding: 0px;
+  margin-top: 10px;
+  margin-right: -20px;
+}
+
+#sortMenu .dropdown-menu li {
+  border-bottom: 1px solid $border;
+  padding-top: 15px;
+  background-color: #FFFFFF;
+  width: 300px;
+}
+
+#sortMenu .dropdown-menu a {
+  padding: 15px 20px;
+  width: 300px;
+}
+
+#sortMenu .dropdown-menu a:hover {
+  color: #A65A26;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+#sortMenu button:focus {  // setting tab outline to browser default
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+
+@media (min-width: $tablet) {
+  #sortMenu button {
+    border: 1px solid #CCCCCC;
+    padding: 12px 15px;
+    margin: 0;
+  }
+  #sortMenu .dropdown-menu {
+    margin-top: -1px;
+    margin-right: 0;
+  }
+}
+
+/*  Global width for all info buttons in phone view  */
+/*  Fixes bootstrap bug with long text in info buttons  */
+@media (max-width: 767px) {    /*  $tablet - 1 = 767px  */
+  .popover {
+    min-width: 220px;
+    max-width: 320px;
+  }
+  .popover-content {
+    //width: 300px;
+    min-width: 200px;
+    max-width: 300px;
+  }
+}
+
+#important-text, #important-tracking-text {
+  font-size: 1.4rem;
+}
+
+.important-body {   /* to fix safari bug of not displaying rx image */
+  background: none;
+}
+
+h2.sm-phone-header {   /*  Refillable VA Medications & Medications Information on My HealtheVet Header is too long in phone view to accomodate Back & Sort buttons so made it slightly smaller in phone view  */
+  font-size: 1.5rem;
+}
+
+@media (max-width: 374px) {   /* At resolutions smaller than 374px wide, the Medication Information page header needs to be made smaller to prevent word wrap */
+  h2.sm-phone-header2 {
+    font-size: 1.2rem;
+    padding-top: 25px;
+  }
+}
+
+@media (min-width: $tablet) {    /*  Reset header back to global size in tablet & desktop  */
+  h2.sm-phone-header {
+    font-size: 2.3rem;
+  }
+}
+
+#med-info-link br {  /* line break in Medication Information link in hamburger menu by default hide */
+  display: none;
+}
+
+/* Need to force line break on the hamburger menu for the Medication Information link
+at a certain resolution (less than 374px wide) to prevent hamburger menu from overlapping */
+
+@media (max-width: 374px) {
+  #med-info-link br {
+    display: block;
+  }
+
+  #med-info-link img {
+    margin-top: -12px !important;
+  }
+}
+
+.status {
+  color: $highlight;
+}
+
+.see-details-link {
+  margin: 8px 0 5px 0;
+}

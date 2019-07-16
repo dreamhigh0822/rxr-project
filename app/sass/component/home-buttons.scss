@@ -1,0 +1,141 @@
+
+#home-button-layout {
+  padding: 0px;
+  margin-top: -12px;
+}
+
+#home-button-layout .col-sm-6 {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.home-button {
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  border-left: 0px;
+  border-right: 0px;
+  padding: 0px;
+  margin-bottom: -1px;
+}
+
+.home-button a {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 0px;
+  width: 100%;
+}
+
+.home-button a:hover {
+  text-decoration: none;
+}
+
+.home-button a:hover h3 {
+  text-decoration: underline;
+}
+
+.home-button-icon {
+  float: left;
+  -webkit-filter: drop-shadow( 2px 0px 2px rgba(0, 0, 0, 0.2) );
+  filter: drop-shadow( 2px 0px 2px rgba(0, 0, 0, 0.2) );
+  display: none;    /* Do not display icon in phone view unless app specifies, then put display in app-specific scss file */
+}
+
+.home-button-arrow {
+  width: 15px;
+  height: 30px;
+  float: right;
+}
+
+.home-button h3 {
+  margin: 0px 32px 0px 1px;
+  font-size: 1.8rem;
+  padding-top: 5px;
+}
+
+
+/*  Page Description Styles - when a page description accompanies the button text, like on Pain Coach */
+
+a.phone-text {
+  width: 44px;
+  height: 44px;
+  padding: 12px;
+  position: relative;
+  top: -45px;
+  margin-bottom: -45px;
+  float: left;
+}
+
+.home-button .popover-content {
+  font-size: 1.4rem;
+}
+
+.phone-text img {
+  position: relative;
+  top: -3px;
+}
+
+a .tablet-text {
+  color: #4E4E53;
+}
+
+.tablet-text {
+  display: none;
+}
+
+a.phone-text {
+  display: inline;
+}
+
+/* End of Page Description Styles */
+
+
+@media (min-width: $tablet) {   /* Tablet & Desktop View */
+  #home-button-layout {
+    padding: 0px 5px;
+    margin-top: 0px;
+  }
+
+  #home-button-layout .col-sm-6 {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .home-button a {
+    padding: 20px;
+  }
+
+  .home-button {
+    background-color: #F8F8F8;
+    border: 1px  solid #CCCCCC;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin-bottom: 30px;
+  }
+
+  .home-button-icon {
+    display: inline-block;
+  }
+
+  .home-button-arrow {
+    width: 22px;
+    height: 44px;
+  }
+
+  .home-button h3 {
+    font-size: 2.4rem;
+    padding-top: 0px;
+  }
+
+  .home-button h3, .tablet-text {
+    margin: 0px 42px 0px 70px;
+  }
+
+  .tablet-text {
+    display: block;
+  }
+
+  a.phone-text {
+    display: none;
+  }
+}

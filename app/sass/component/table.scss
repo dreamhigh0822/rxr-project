@@ -1,0 +1,79 @@
+th {
+  background-color: #E6E6E6;
+}
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  padding: 12px 8px;         /* makes sure the table tapable area minimum is 44px x 44px */
+}
+
+.table > thead > tr > th .glyphicon,
+.table > tbody > tr > th .glyphicon,
+.table > tfoot > tr > th .glyphicon {    /* sorting glyphicon */
+  margin-left: 10px;
+  position: relative;
+  top: 2px;
+  color: $link;
+}
+
+.table > thead > tr > th .active-sort,
+.table > tbody > tr > th .active-sort,
+.table > tfoot > tr > th .active-sort {
+  color: #B86125;       /* make active sort arrow gold */
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th,
+.panel:nth-child(odd) > .panel-body,
+.panel > .panel-collapse > .panel-body:nth-child(odd) {
+  background-color: #FFFFFF;
+}
+
+.table-striped > tbody > tr:nth-child(even) > td,
+.table-striped > tbody > tr:nth-child(even) > th,
+.panel:nth-child(even) > .panel-body,
+.panel > .panel-collapse > .panel-body:nth-child(even) {
+  background-color: #F1F1F1;
+}
+
+div#table-phone-view .panel {
+  margin: -1px 0px 0px 0px;
+}
+
+div#table-phone-view .row {
+  margin-bottom: 15px;
+}
+
+/* Label Your 2 Responsive Tables as "table-tablet-view" and "table-phone-view" */
+
+div#table-tablet-view {
+  display: none;
+}
+
+div#table-phone-view {
+  display: block;
+}
+
+@media (min-width: $tablet) {
+  div#table-tablet-view {
+    display: block;
+  }
+
+  div#table-phone-view {
+    display: none;
+  }
+}
+
+@media (min-width: $desktop) {
+  div#table-tablet-view {
+    display: block;
+  }
+
+  div#table-phone-view {
+    display: none;
+  }
+}

@@ -1,0 +1,838 @@
+$header-bkgnd: #E8E8E8;
+
+/* App Primary Colors */
+$aap: #003f72;
+$dc: #4E5A95;
+$mhpro: #2A2B39;
+$pf: #B86228;
+$journal: #DDC266;
+$pc: #004270;
+$rx: #034721;
+
+/* App Title Bar Colors */
+$aap-title1: #26507F;
+$aap-title2: #153D71;
+$aap-title3: #00101C;
+$dc-title1: #53598D;
+$dc-title2: #424881;
+$dc-title3: #232F5F;
+$mhpro-title1: #2A2B39;
+$mhpro-title2: #20202B;
+$mhpro-title3: #021209;
+$pf-title1: #B86228;
+$pf-title2: #8A4A1E;
+$pf-title3: #5C3114;
+$journal-title1: #DDC266;
+$journal-title2: #D2AD33;
+$journal-title3: #A17700;
+$pc-title1: #003F72;
+$pc-title2: #002F57;
+$pc-title3: #00101C;
+$rx-title1: #396D4D;
+$rx-title2: #0B4822;
+$rx-title3: #022411;
+
+/*  Menu List Navigation Borders */
+$aap-menu-border-left: #1c4477;
+$aap-menu-border-right: #8fa7be;
+$dc-menu-border-left: #272D5E;
+$dc-menu-border-right: #A8ABC6;
+$mhpro-menu-border-left: #021209;
+$mhpro-menu-border-right: #94959C;
+$pf-menu-border-left: #5A3115;
+$pf-menu-border-right: #D8B095;
+$journal-menu-border-left: #A17700;
+$journal-menu-border-right: #EADFAE;
+$pc-menu-border-left: #02101C;
+$pc-menu-border-right: #839DB6;
+$rx-menu-border-left: #042411;
+$rx-menu-border-right: #467759;
+
+/* Button Colors */
+$primary-btn-color1: #00618E;
+$primary-btn-color2: #004A6B;
+$secondary-btn-color1: #E9E9E9;
+$secondary-btn-color2: #CFCFCF;
+
+/* App Secondary Colors */
+$highlight: #A65A26;
+$link: #0B4F78;
+$error: #C4262E;
+$error-bkgnd: #F8E9EA;
+$success: #557630;
+$success-bkgnd: #EEF1EA;
+$warning: #F3CF45;
+$warning-bkgnd: #F4EBC1;
+$required: $error;
+
+/*  Total Score Colors after Assessment Submission */
+$alert-low: $success;
+$alert-medium: #FF7F32;
+$alert-high: $error;
+
+/* Tertiary Colors */
+$dark-grey: #4D4E53;
+$border: #CCCCCC;
+$med-grey: #E6E6E6;
+$light-grey: #F1F1F1;
+
+/* Screen Sizes - Only needed for tablet and desktop as the default will be for phones */
+$tablet: 768px;
+$desktop: 992px;
+
+@import "variable";
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  font-family: Helvetica, Arial, Verdana, san-serif;
+  font-size: 1.1rem;  /* = 10px */
+  height: 100%;
+}
+
+.container-fluid {
+  min-height: 100%;
+  position: relative;
+}
+
+a, a:hover, a:visited, a:active {
+  color: $link;
+}
+
+/* VA Header Styles */
+
+.va-title-area {
+  background-color: $header-bkgnd;
+  padding: 15px 0 0 20px;
+}
+
+#skipNav {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#logo-va {
+  width: 86px;
+  height: 20px;
+  float: left;
+}
+
+#header-login {
+  text-align: right;
+  font-size: 1.4rem;
+}
+
+#header-login a {
+  padding: 24px 20px 12px 0;     /* makes sure the tapable area minimum is 44px x 44px */
+  margin-right: 0;
+  display: inline-block;
+  margin-top: -35px;
+  width: 200px;
+}
+
+#header-login img {
+  margin-left: 10px;
+  width: 20px;
+  height: 12px;
+}
+
+#header-login img#login-off {
+  display: inline-block;
+}
+
+#header-login img#login-on {
+  display: none;
+}
+
+#header-login.open img#login-off {
+  display: none;
+}
+
+#header-login.open img#login-on {
+  display: inline-block;
+}
+
+#header-login .dropdown-menu {
+  background-color: $header-bkgnd;
+  border: 1px solid $border;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  padding: 0;
+  margin-top: 0;
+}
+
+#header-login .dropdown-menu li {
+  border-bottom: 1px solid $border;
+  padding-top: 15px;
+}
+
+#header-login .dropdown-menu li#logout {
+  border-bottom: 0;
+}
+
+#header-login .dropdown-menu a {
+  width: auto;
+  padding: 15px 20px;   /* makes sure the tapable area minimum is 44px x 44px */
+}
+
+#header-login .dropdown-menu a:hover {
+  background-color: $header-bkgnd;
+  text-decoration: underline;
+}
+
+/* End of VA Header Styles */
+
+/* App Title Header Styles */
+
+.app-title-area {
+  background-color: $app-primary;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, $app-title1), color-stop(1, $app-title2));
+  background-image: -o-linear-gradient(bottom, $app-title1 0%, $app-title2 100%);
+  background-image: -moz-linear-gradient(bottom, $app-title1 0%, $app-title2 100%);
+  background-image: -webkit-linear-gradient(bottom, $app-title1 0%, $app-title2 100%);
+  background-image: -ms-linear-gradient(bottom, $app-title1 0%, $app-title2 100%);
+  background-image: linear-gradient(to bottom, $app-title1 0%, $app-title2 100%);
+  box-shadow: 3px 5.196px 16px 0 rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid $app-title3;
+  padding: 0;
+  display: inline-block;
+  width: 100%;
+}
+
+.app-title-area h1 {
+  font-size: 2.0rem;
+  color: #FFFFFF;
+  text-shadow : 2px 0 2px rgba(0, 0, 0, 0.5);
+  margin: 0 -10px 0 0;
+  float: left;
+  display: inline;
+  padding: 18px 0 15px 20px;
+  width: 250px;
+}
+
+.app-title-area h1 img {
+  margin-top: -6px;
+}
+
+.app-title-area nav {
+  white-space: nowrap;
+  text-align: right;
+  padding: 0;
+  margin: 0 0 -1px 0;
+  //margin-bottom: -1px;
+}
+
+/*  Tablet & Desktop Navigation */
+
+nav#menu-list a {
+  color: #FFFFFF;
+  text-shadow : 2px 0 2px rgba(0, 0, 0, 0.5);
+  font-size: 1.8rem;
+  padding: 18px 20px 17px 20px;
+  border-right: 1px solid $menu-border-right;
+  border-left: 1px solid $menu-border-left;
+  margin: 0 0 0 -3px;
+  display: inline-block;
+  //margin-left: -3px;  /* removes extra space caused by newline (used for readability) in the code */
+}
+
+nav#menu-list a:hover {
+  background-color: #FFFFFF;
+  color: #000000;
+  text-shadow: none;
+  border-left: 1px solid #FFFFFF;
+  border-right: 1px solid #FFFFFF;
+  margin: -1px 0 0 -3px;
+}
+
+nav#menu-list img {
+  width: 40px;
+  height: 22px;
+  margin-left: 15px;
+}
+
+nav#menu-list img#menu-off {
+  display: inline-block;
+}
+
+nav#menu-list img#menu-off2, nav#menu-list img#menu-on {
+  display: none;
+}
+
+nav#menu-list a:hover img#menu-off {
+  display: none;
+}
+
+nav#menu-list a:hover img#menu-off2 {
+  display: inline-block;
+}
+
+nav#menu-list.open img#menu-off, nav#menu-list.open img#menu-off2, nav#menu-list.open a:hover img#menu-off2 {
+  display: none;
+}
+
+nav#menu-list.open img#menu-on {
+  display: inline-block;
+}
+
+nav#menu-list.open a#nav-dropdown {
+  background-color: #FFFFFF;
+  color: #000000;
+  text-shadow: none;
+  border: 1px solid #FFFFFF;
+  margin: -1px 0 0 -3px;
+}
+
+nav#menu-list a#home {
+  border-left: 0;
+}
+
+nav#menu-list a#help {
+  border-right: 0;
+}
+
+nav#menu-list .dropdown-menu {
+  border: 1px solid $border;
+  border-top: 1px solid #FFFFFF;
+  margin-top: 0;
+  padding: 0;
+  background : #FFFFFF;
+  border-radius : 0 0 10px 10px;
+  -moz-border-radius : 0 0 10px 10px;
+  -webkit-border-radius : 0 0 10px 10px;
+  box-shadow : 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+nav#menu-list .dropdown-menu li {
+  border-bottom: 1px solid $border;
+  padding: 0;
+}
+
+nav#menu-list .dropdown-menu li#last {
+  border-bottom: 0;
+}
+
+nav#menu-list .dropdown-menu a {
+  color: #000000;
+  text-shadow: none;
+  border: 0;
+  padding: 24px 20px;
+  margin: 0;
+}
+
+nav#menu-list .dropdown-menu a:hover {
+  background-color: #FFFFFF;
+  text-decoration: underline;
+}
+
+/*  End of Tablet & Desktop Navigation */
+
+/*  Phone Navigation */
+
+nav#hamburger-list {
+  display: inline;
+  float: right;
+}
+
+nav#hamburger-list.open {
+  background-color: #FFFFFF;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  border-right: 0;
+  padding: 0;
+}
+
+nav#hamburger-list img#hamburger-off, nav#hamburger-list img#hamburger-on {
+  width: 47px;
+  height: 55px;
+  padding: 0;  /* makes image size 30px x 20px but tapable area minimum is 44px x 44px */
+  margin: 0;
+}
+
+nav#hamburger-list img#hamburger-off {
+  display: block;
+}
+
+nav#hamburger-list img#hamburger-on {
+  display: none;
+}
+
+nav#hamburger-list.open img#hamburger-off {
+  display: none;
+}
+
+nav#hamburger-list.open img#hamburger-on {
+  display: block;
+}
+
+nav#hamburger-list .dropdown-menu a:hover {
+  background-color: #FFFFFF;
+  text-decoration: underline;
+}
+
+nav#hamburger-list .dropdown-menu {
+  border: 1px solid $border;
+  border-top: 1px solid #FFFFFF;
+  margin-top: 1px;
+  background : #FFFFFF;
+  border-radius : 0 0 10px 10px;
+  -moz-border-radius : 0 0 10px 10px;
+  -webkit-border-radius : 0 0 10px 10px;
+  box-shadow : 0 10px 20px rgba(0, 0, 0, 0.5);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+nav#hamburger-list .dropdown-menu a {
+  padding: 15px 10px 15px 30px;
+}
+
+nav#hamburger-list .dropdown-menu li {
+  border-bottom: 1px solid $border;
+  padding: 0 54px 0 0;
+  font-size: 1.4rem;
+}
+
+nav#hamburger-list .dropdown-menu li#last {
+  border-bottom: 0;
+}
+
+nav#hamburger-list .dropdown-menu img {
+  width: 12px;
+  height: 25px;
+  position: absolute;
+  right: 0;
+  left: auto;
+  margin-top: -2px;
+  margin-right: 30px;
+}
+
+/*  End of Phone Navigation */
+
+nav#menu-list {
+  display: none;
+}
+
+nav#hamburger-list {
+  display: inline;
+}
+
+/* Expanding width of log in name as resolution gets higher */
+
+@media (min-width: 420px) {
+  #header-login a {
+    width: 300px;
+  }
+}
+
+@media (min-width: 520px) {
+  #header-login a {
+    width: 400px;
+  }
+}
+
+@media (min-width: 620px) {
+  #header-login a {
+    width: 500px;
+  }
+}
+
+
+@media (min-width: $tablet) {
+  .va-title-area {
+    padding: 15px 0 10px 20px;
+    min-height:59px;
+  }
+  #logo-va {
+    width: 120px;
+    height: 28px;
+  }
+  #header-login a {
+    width: auto;
+  }
+  #header-login {
+    padding-top: 13px;
+    margin-bottom: -11px;
+  }
+  #header-login .dropdown-menu {
+    margin-top: -1px;
+  }
+  .app-title-area h1 {
+    font-size: 3.0rem;
+    padding: 14px 0 15px 20px;
+    width: auto;
+  }
+  nav#menu-list {
+    display: block;
+  }
+  nav#hamburger-list {
+    display: none;
+  }
+}
+
+@media (min-width: $desktop) {
+  .va-title-area {
+    padding: 15px 0 10px 20px;
+  }
+  #logo-va {
+    width: 120px;
+    height: 28px;
+  }
+  #header-login a {
+    width: auto;
+  }
+  #header-login {
+    padding-top: 13px;
+    margin-bottom: -11px;
+  }
+  #header-login .dropdown-menu {
+    margin-top: -1px;
+  }
+  .app-title-area h1 {
+    font-size: 3.0rem;
+    padding: 15px 0 14px 20px;
+    width: auto;
+  }
+  nav#menu-list {
+    display: block;
+  }
+  nav#hamburger-list {
+    display: none;
+  }
+
+  nav#menu-list a {
+    max-width: 100%;
+    white-space: nowrap;
+    vertical-align: inherit;
+    height: inherit;
+  }
+
+}
+
+/* End of Header Styles */
+
+/* Footer Styles */
+footer {
+  padding: 37px 0 51px 0;
+  text-align: center;
+  color: #555555;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+}
+
+span.footer-content {
+  white-space: nowrap;
+  padding: 0 4px 0 0;
+  border-right: 1px solid #555555;
+}
+
+span.footer-end {
+  border-right: 0px;
+}
+
+@media (min-width: $tablet) {
+  footer {
+    //padding: 40px 0px 51px 0px;
+    height: 13px;
+    padding: 36px 0 54px 0;
+  }
+}
+
+@media (min-width: $desktop) {
+  footer {
+    font-size: 1.3rem;
+    height: 15px;
+    padding: 36px 0 54px 0;
+  }
+}
+
+/* End of Footer Styles */
+
+/*  Page Content Styles */
+
+.content {
+  font-size: 1.4rem;
+}
+
+.modal-content {
+  font-size: 1.2rem;
+}
+
+.content {
+  padding-bottom: 90px;
+}
+
+.content h2 {
+  background-color: $header-bkgnd;
+  border-bottom: 1px solid #ccc;
+  padding: 16px 20px 11px 20px;
+  margin-top: -10px;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+p, form {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.center {
+  text-align: center;
+}
+
+.required-text {
+  margin: 20px 20px 30px 20px;
+}
+
+.required {
+  color: $required;
+  font-weight: bold;
+  font-size: 1.8rem;
+  position: relative;
+  top: 2px;
+}
+
+.form-control {
+  width: auto;    /*  Prevents form inputs from becoming the full width of the screen when you only want it to be as wide as the content it contains */
+  font-size: 1.4rem;
+}
+
+.input-lg {
+  font-size: 1.4rem;
+}
+
+option {         /* Increasing padding so the tapable area minimum is 44px x 44px */
+  padding-top: 14px;
+  padding-bottom: 14px;
+  line-height: 44px;
+}
+
+@media (min-width: $tablet) {
+  .content h2 {
+    background-color: #FFFFFF;
+    border-bottom: 0;
+    padding: 23px 20px 5px 20px;
+    font-size: 2.3rem;
+  }
+  .modal-content {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: $desktop) {
+  .content h2 {
+    background-color: #FFFFFF;
+    border-bottom: 0;
+    padding: 27px 20px 5px 20px;
+    font-size: 2.3rem;
+  }
+  .modal-content {
+    font-size: 1.4rem;
+  }
+}
+
+.scrollbar-gradient {
+    background: -moz-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0.1) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(255,255,255,0.1) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(255,255,255,0.1) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(255,255,255,0.1) 0%,rgba(255,255,255,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1afffcfc', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+    bottom: 0;
+    height: 50px;
+    margin: 0 -15px;
+    position: fixed;
+    width: 100%;
+}
+
+/* End of Page Content Styles */
+
+/* Buttons */
+
+.btn {
+  padding: 11px 22px;       /* Increasing Bootstrap padding so the tapable area minimum is 44px x 44px */
+  font-size: 1.4rem;
+}
+
+.btn-primary {
+  background-color: $primary-btn-color1;  /* IE 9 */
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, $primary-btn-color1), color-stop(1, $primary-btn-color2));
+  background-image: -o-linear-gradient(bottom, $primary-btn-color1 0%, $primary-btn-color2 100%);
+  background-image: -moz-linear-gradient(bottom, $primary-btn-color1 0%, $primary-btn-color2 100%);
+  background-image: -webkit-linear-gradient(bottom, $primary-btn-color1 0%, $primary-btn-color2 100%);
+  background-image: -ms-linear-gradient(bottom, $primary-btn-color1 0%, $primary-btn-color2 100%);
+  background-image: linear-gradient(to bottom, $primary-btn-color1 0%, $primary-btn-color2 100%);
+  border: 1px solid #06283C;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+.btn-secondary, .btn-default {
+  background-color: $secondary-btn-color1;  /* IE 9 */
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, $secondary-btn-color1), color-stop(1, $secondary-btn-color2));
+  background-image: -o-linear-gradient(bottom, $secondary-btn-color1 0%, $secondary-btn-color2 100%);
+  background-image: -moz-linear-gradient(bottom, $secondary-btn-color1 0%, $secondary-btn-color2 100%);
+  background-image: -webkit-linear-gradient(bottom, $secondary-btn-color1 0%, $secondary-btn-color2 100%);
+  background-image: -ms-linear-gradient(bottom, $secondary-btn-color1 0%, $secondary-btn-color2 100%);
+  background-image: linear-gradient(to bottom, $secondary-btn-color1 0%, $secondary-btn-color2 100%);
+  border: 1px solid #CCCCCC;
+  font-weight: bold;
+  color: #000000;
+}
+
+a.btn-primary {
+  color: #FFFFFF;
+}
+
+a.btn-secondary, a.btn-default {
+  color: #000000;
+}
+
+.btn-primary img, .btn-secondary img, .btn-default img {
+  width: 9px;
+  height: 15px;
+  margin: -2px 0 0 0;
+}
+
+.btn-primary img.forward, .btn-secondary img.forward, .btn-default img.forward {
+  margin-left: 5px;
+}
+
+.btn-primary img.back, .btn-secondary img.back, .btn-default img.back {
+  margin-right: 5px;
+}
+
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn {
+  filter: alpha(opacity=60);
+  opacity: .60;
+}
+
+.left-buttons, .center-buttons, .right-buttons {
+  clear: both;
+  padding: 30px 0;
+}
+
+.left-buttons {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.left-buttons button, .left-buttons a {
+  margin-right: 20px;
+}
+
+.center-buttons {
+  text-align: center;
+}
+
+.center-buttons button, .center-buttons a {
+  margin: 0 20px;
+}
+
+.right-buttons {
+  text-align: right;
+  padding-right: 20px;
+}
+
+.right-buttons button, .right-buttons a {
+  margin-left: 20px;
+}
+
+.icon-info img {
+  height: 18px;
+  width: 18px;
+}
+
+.icon-info {
+  padding: 15px 14px;
+  cursor: pointer;
+}
+
+.popover {
+    max-width: 100%; /* max-width of info button popover */
+}
+
+.icon-calendar {
+  margin-left: 15px;
+  height: 25px;
+  width: 25px;
+}
+
+label {
+  max-width: auto;
+}
+
+/* End of Button Styles */
+
+/* About & Help Modal Styles */
+
+.about-title, .help-title {
+  color: #000000;
+  font-weight: bold;
+  font-size: 2.0rem;
+  padding-left: 5px;
+}
+
+.about-header, .about-footer, .help-header, .help-footer {
+  border: 0;
+}
+
+.about-body, .help-body {
+  padding: 0;
+  p {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.about-row, .help-row {
+  color: #444444;
+  padding: 10px 5px;
+  width: 100%;
+  margin-left: 0;
+  border-bottom: 1px solid #ADADAD;
+}
+
+#about-last, #help-last {
+  border-bottom: 0;
+  margin-bottom: -10px;
+}
+
+.about-row label, .help-row label {
+  padding: 0;
+}
+
+@media (min-width: $tablet) {
+  .about-title, .help-title {
+    font-size: 2.2rem;
+  }
+  .about-row, .help-row {
+    padding: 10px 5px 5px 5px;
+  }
+}
+
+@media (min-width: $desktop) {
+  .about-title, .help-title {
+    font-size: 2.2rem;
+  }
+  .about-row, .help-row {
+    padding: 10px 5px 5px 5px;
+  }
+}
+/* End of About & Help Modal Styles */
+
+/* Importing additional global component styles */
+@import "component/table";
+@import "component/alert";
+@import "component/home-buttons";
+@import "component/home-notifications";
