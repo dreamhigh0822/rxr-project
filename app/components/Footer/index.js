@@ -8,13 +8,9 @@ import messages from './messages';
 
 function Footer() {
   return (
-    <Wrapper>
-      <section />
-      <section />
-      <section>
-        <FormattedMessage {...messages.authorMessage} />
-      </section>
-    </Wrapper>
+    <div>
+      <h3>This is the footer part</h3>
+    </div>
   );
 }
 
