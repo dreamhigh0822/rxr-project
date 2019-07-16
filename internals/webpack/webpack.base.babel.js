@@ -28,6 +28,16 @@ module.exports = options => ({
         },
       },
       {
+        test: /\.scss$/,
+          use: [{
+            loader: "style-loader"
+          }, {
+            loader: "css-loader" 
+          }, {
+            loader: "sass-loader"
+          }]
+      },
+      {
         // Preprocess our own .css files
         // This is the place to add your own loaders (e.g. sass/less etc.)
         // for a list of loaders, see https://webpack.js.org/loaders/#styling
