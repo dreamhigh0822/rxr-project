@@ -203,7 +203,7 @@ h3.notification-phone-view-alert {
 .phone-notification-link, .phone-notification-alert {
   @extend .home-button;  /*  Style pulled from home-buttons.scss  */
   border-top: 0px;
-  background-image: url('/images/icon-arrowForward.svg');
+  background-image: url('/img/icon-arrowForward.svg');
   background-size: 15px 30px;
   background-repeat: no-repeat;
   background-position: 94% 50%;
@@ -211,7 +211,7 @@ h3.notification-phone-view-alert {
 
 .phone-notification-alert {
   background-color: $error;
-  background-image: url('/images/icon-arrowForwardRed.svg');
+  background-image: url('/img/icon-arrowForwardRed.svg');
   margin-bottom: 10px;
 }
 
