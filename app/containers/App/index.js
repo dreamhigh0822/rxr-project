@@ -18,7 +18,6 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import GlobalStyle from '../../global-styles';
 import { Container } from 'react-bootstrap';
-import '../../sass/app.scss';
 const AppWrapper = styled.div`
   max-width: calc(768px + 16px * 2);
   margin: 0 auto;
