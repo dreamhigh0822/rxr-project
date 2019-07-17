@@ -8,7 +8,6 @@
 
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
@@ -16,16 +15,11 @@ import FeaturePage from 'containers/FeaturePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-import GlobalStyle from '../../global-styles';
 import { Container } from 'react-bootstrap';
-const AppWrapper = styled.div`
-  max-width: calc(768px + 16px * 2);
-  margin: 0 auto;
-  display: flex;
-  min-height: 100%;
-  padding: 0 16px;
-  flex-direction: column;
-`;
+import RxList from 'containers/RxListPage';
+import RxTrackingList from 'containers/RxTrackingListPage';
+import RxHistory from 'containers/RxHistoryPage';
+
 
 export default function App() {
   return (
@@ -36,7 +30,9 @@ export default function App() {
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route path="/features" component={FeaturePage} />
+        <Route path="/refillable-va-medication" component={RxList} />
+        <Route path="/prescription-history" component={RxHistory} />
+        <Route path="/track-delivery" component={RxTrackingList} />
         <Route path="" component={NotFoundPage} />
       </Switch>
       <Footer />

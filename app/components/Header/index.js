@@ -12,6 +12,7 @@ import {
   Nav,
   NavDropdown
 } from 'react-bootstrap';
+import { Router, Route, Link, NavLink } from "react-router-dom";
 
 function Header() {
   const [showAbout, setShowAbout] = useState(false);
@@ -49,11 +50,11 @@ function Header() {
             <Navbar.Toggle aria-controls="responsive-navbar-nav-down" />
             <Navbar.Collapse id="responsive-navbar-nav-down">
               <Nav className="ml-auto">
-                <Nav.Link href="#features">Home</Nav.Link>
+                <Nav.Link as={Link} to="/">Home</Nav.Link>
                 <NavDropdown title="Features" id="collasible-nav-dropdown-down">
-                  <NavDropdown.Item href="#action/3.1">Refillable VA Medications</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">Track Delivery</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3">Prescription History</NavDropdown.Item> 
+                  <NavDropdown.Item as={Link} to="/refillable-va-medication">Refillable VA Medications</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/track-delivery">Track Delivery</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/prescription-history">Prescription History</NavDropdown.Item> 
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="#action/3.4">Medications Information on My HealtheVet</NavDropdown.Item>
                 </NavDropdown>
