@@ -1,3 +1,5 @@
+@import "sass/colors.scss";
+
 .home-button {
     background-color: #FFFFFF;
     border: 1px solid #CCCCCC;
@@ -41,5 +43,5 @@
     margin: 0px 32px 0px 1px;
     font-size: 1.2rem;
     padding-top: 2px;
-    color: #0b4e78;
+    color: $pc-title1;
 }

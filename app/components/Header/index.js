@@ -29,7 +29,7 @@ function Header() {
     <Container>
       <Row>
         <Col>
-          <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+          <Navbar collapseOnSelect expand="lg" className="nav-top">
             <Navbar.Brand as={Link} to="/">
               <img src={TopLogo} alt="" style={{width: '100px' }}/>
             </Navbar.Brand>
@@ -47,7 +47,7 @@ function Header() {
       </Row>
       <Row>
         <Col>
-          <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+          <Navbar collapseOnSelect expand="lg" className="nav-down">
             <img src={MenuLogo} alt="" style={{width: '40px', marginRight: '10px' }}/>
             <Navbar.Brand as={Link} to="/">
               Rx Refill
@@ -57,13 +57,13 @@ function Header() {
               <Nav className="ml-auto">
                 <Nav.Link as={Link} to="/">Home</Nav.Link>
                 <NavDropdown title="Features" id="collasible-nav-dropdown-down">
-                  <NavDropdown.Item as={Link} to="/refillable-va-medication">Refillable VA Medications</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/refillable-va-medications">Refillable VA Medications</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item as={Link} to="/track-delivery">Track Delivery</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item as={Link} to="/prescription-history">Prescription History</NavDropdown.Item> 
                   <NavDropdown.Divider />
-                  <NavDropdown.Item>Medications Information on My HealtheVet</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/links">Medications Information on My HealtheVet</NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link onClick={handleShowAbout}>About</Nav.Link>
                 <Nav.Link onClick={handleShowHelp}>Help</Nav.Link>

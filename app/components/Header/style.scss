@@ -1,3 +1,17 @@
+@import 'sass/colors.scss';
+
+.nav-top {
+    background-color: $header-bkgnd;
+}
+.nav-down {
+    background-color: $rx-title2;
+}
+.nav-down  a {
+    color: white !important;
+}
+a.dropdown-item {
+    color: black !important;
+}
 #responsive-navbar-nav-down .dropdown-menu {
     left: -150%;
 }

@@ -1,0 +1,81 @@
+$header-bkgnd: #E8E8E8;
+
+/* App Primary Colors */
+$aap: #003f72;
+$dc: #4E5A95;
+$mhpro: #2A2B39;
+$pf: #B86228;
+$journal: #DDC266;
+$pc: #004270;
+$rx: #034721;
+
+/* App Title Bar Colors */
+$aap-title1: #26507F;
+$aap-title2: #153D71;
+$aap-title3: #00101C;
+$dc-title1: #53598D;
+$dc-title2: #424881;
+$dc-title3: #232F5F;
+$mhpro-title1: #2A2B39;
+$mhpro-title2: #20202B;
+$mhpro-title3: #021209;
+$pf-title1: #B86228;
+$pf-title2: #8A4A1E;
+$pf-title3: #5C3114;
+$journal-title1: #DDC266;
+$journal-title2: #D2AD33;
+$journal-title3: #A17700;
+$pc-title1: #003F72;
+$pc-title2: #002F57;
+$pc-title3: #00101C;
+$rx-title1: #396D4D;
+$rx-title2: #0B4822;
+$rx-title3: #022411;
+
+/*  Menu List Navigation Borders */
+$aap-menu-border-left: #1c4477;
+$aap-menu-border-right: #8fa7be;
+$dc-menu-border-left: #272D5E;
+$dc-menu-border-right: #A8ABC6;
+$mhpro-menu-border-left: #021209;
+$mhpro-menu-border-right: #94959C;
+$pf-menu-border-left: #5A3115;
+$pf-menu-border-right: #D8B095;
+$journal-menu-border-left: #A17700;
+$journal-menu-border-right: #EADFAE;
+$pc-menu-border-left: #02101C;
+$pc-menu-border-right: #839DB6;
+$rx-menu-border-left: #042411;
+$rx-menu-border-right: #467759;
+
+/* Button Colors */
+$primary-btn-color1: #00618E;
+$primary-btn-color2: #004A6B;
+$secondary-btn-color1: #E9E9E9;
+$secondary-btn-color2: #CFCFCF;
+
+/* App Secondary Colors */
+$highlight: #A65A26;
+$link: #0B4F78;
+$error: #C4262E;
+$error-bkgnd: #F8E9EA;
+$success: #557630;
+$success-bkgnd: #EEF1EA;
+$warning: #F3CF45;
+$warning-bkgnd: #F4EBC1;
+$required: $error;
+
+/*  Total Score Colors after Assessment Submission */
+$alert-low: $success;
+$alert-medium: #FF7F32;
+$alert-high: $error;
+
+/* Tertiary Colors */
+$dark-grey: #4D4E53;
+$border: #CCCCCC;
+$med-grey: #E6E6E6;
+$light-grey: #F1F1F1;
+
+/* Screen Sizes - Only needed for tablet and desktop as the default will be for phones */
+$tablet: 768px;
+$desktop: 992px;
