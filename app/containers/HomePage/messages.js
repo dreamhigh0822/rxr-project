@@ -3,29 +3,43 @@
  *
  * This contains all the text for the HomePage component.
  */
-import { defineMessages } from 'react-intl';
+const links = [
+  {
+    "title": "Refillable VA Prescripiton",
+    "img": "img/icon-refillableMeds.svg",
+    "img_alt":"Refillable VA Prescription",
+    "url": "/refillable-va-medications",
+    "external": false,
+    "info_icon": false,
+    "menu_icon": true
+  },
+  {
+    "title": "Track Delivery",
+    "img": "img/icon-delivery.svg",
+    "img_alt":"/track-delievery",
+    "url": "",
+    "external": false,
+    "info_icon": false,
+    "menu_icon": false
+  },
+  {
+    "title": "Prescrition History",
+    "img": "img/icon-rxHistory.svg",
+    "img_alt":"Prescrition Hisotry icon",
+    "url": "/prescription-history",
+    "external": false,
+    "info_icon": false,
+    "menu_icon": true
+  },
+  {
+    "title": "Medication Information on My HealtheVet",
+    "img": "img/icon-links.svg",
+    "img_alt":"Links icon",
+    "url": "/links",
+    "external": false,
+    "info_icon": false,
+    "menu_icon": true
+  }
+]
 
-export const scope = 'boilerplate.containers.HomePage';
-
-export default defineMessages({
-  startProjectHeader: {
-    id: `${scope}.start_project.header`,
-    defaultMessage: 'Home Page',
-  },
-  startProjectMessage: {
-    id: `${scope}.start_project.message`,
-    defaultMessage: 'Home Page',
-  },
-  trymeHeader: {
-    id: `${scope}.tryme.header`,
-    defaultMessage: 'Try me!',
-  },
-  trymeMessage: {
-    id: `${scope}.tryme.message`,
-    defaultMessage: 'Show Github repositories by',
-  },
-  trymeAtPrefix: {
-    id: `${scope}.tryme.atPrefix`,
-    defaultMessage: '@',
-  },
-});
+export default links;

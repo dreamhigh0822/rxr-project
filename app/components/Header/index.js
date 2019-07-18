@@ -13,6 +13,9 @@ import {
   NavDropdown
 } from 'react-bootstrap';
 import { Router, Route, Link, NavLink } from "react-router-dom";
+import TopLogo from 'img/logo-vaHealth.svg';
+import MenuLogo from 'img/appIcon-rxRefill.svg';
+import './style.scss';
 
 function Header() {
   const [showAbout, setShowAbout] = useState(false);
@@ -27,16 +30,15 @@ function Header() {
       <Row>
         <Col>
           <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
-            <Navbar.Brand href="#home">VAHealth</Navbar.Brand>
+            <Navbar.Brand as={Link} to="/">
+              <img src={TopLogo} alt="" style={{width: '100px' }}/>
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav-top" />
             <Navbar.Collapse id="responsive-navbar-nav-top">
               <Nav className="ml-auto">
-                <NavDropdown title="" id="collasible-nav-dropdown-top">
-                  <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                <NavDropdown title="Username" id="collasible-nav-dropdown-top">
+                  <NavDropdown.Item>Return to Launchpad</NavDropdown.Item>
+                  <NavDropdown.Item>Log out</NavDropdown.Item>
                 </NavDropdown>
               </Nav>
             </Navbar.Collapse>
@@ -46,17 +48,22 @@ function Header() {
       <Row>
         <Col>
           <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-            <Navbar.Brand href="#home">Rx Refill</Navbar.Brand>
+            <img src={MenuLogo} alt="" style={{width: '40px', marginRight: '10px' }}/>
+            <Navbar.Brand as={Link} to="/">
+              Rx Refill
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav-down" />
             <Navbar.Collapse id="responsive-navbar-nav-down">
               <Nav className="ml-auto">
                 <Nav.Link as={Link} to="/">Home</Nav.Link>
                 <NavDropdown title="Features" id="collasible-nav-dropdown-down">
                   <NavDropdown.Item as={Link} to="/refillable-va-medication">Refillable VA Medications</NavDropdown.Item>
+                  <NavDropdown.Divider />
                   <NavDropdown.Item as={Link} to="/track-delivery">Track Delivery</NavDropdown.Item>
+                  <NavDropdown.Divider />
                   <NavDropdown.Item as={Link} to="/prescription-history">Prescription History</NavDropdown.Item> 
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">Medications Information on My HealtheVet</NavDropdown.Item>
+                  <NavDropdown.Item>Medications Information on My HealtheVet</NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link onClick={handleShowAbout}>About</Nav.Link>
                 <Nav.Link onClick={handleShowHelp}>Help</Nav.Link>

@@ -1,109 +1,69 @@
-/*
- * HomePage
- *
- * This is the first thing users see of our App, at the '/' route
- */
+import React from 'react';
+import links from './messages';
+import { Container, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-import React, { useEffect, memo } from 'react';
-import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
-import { FormattedMessage } from 'react-intl';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
-import { createStructuredSelector } from 'reselect';
+import './style.scss';
+import Image1 from 'img/icon-refillableMeds.svg';
+import Image2 from 'img/icon-delivery.svg';
+import Image3 from 'img/icon-rxHistory.svg';
+import Image4 from 'img/icon-links.svg';
+import ForwardIcon from 'img/icon-arrowForward.svg';
 
-import { useInjectReducer } from 'utils/injectReducer';
-import { useInjectSaga } from 'utils/injectSaga';
-import {
-  makeSelectRepos,
-  makeSelectLoading,
-  makeSelectError,
-} from 'containers/App/selectors';
-import H2 from 'components/H2';
-import ReposList from 'components/ReposList';
-import AtPrefix from './AtPrefix';
-import CenteredSection from './CenteredSection';
-import Form from './Form';
-import Input from './Input';
-import Section from './Section';
-import messages from './messages';
-import { loadRepos } from '../App/actions';
-import { changeUsername } from './actions';
-import { makeSelectUsername } from './selectors';
-import reducer from './reducer';
-import saga from './saga';
-
-const key = 'home';
-
-export function HomePage({
-  username,
-  loading,
-  error,
-  repos,
-  onSubmitForm,
-  onChangeUsername,
-}) {
-  useInjectReducer({ key, reducer });
-  useInjectSaga({ key, saga });
-
-  useEffect(() => {
-    // When initial state username is not null, submit the form to load repos
-    if (username && username.trim().length > 0) onSubmitForm();
-  }, []);
-
-  const reposListProps = {
-    loading,
-    error,
-    repos,
-  };
-
+function Item({url, img, img_alt, title}) {
   return (
-    <article>
-      <Helmet>
-        <title>Home Page</title>
-        <meta name="description" content="ReRefill Homepage" />
-      </Helmet>
-      <div>
-        <CenteredSection>
-          <h1>This is the center section of the homepage</h1>
-        </CenteredSection>
-      </div>
-    </article>
-  );
+    <div className="home-button">
+      <Link to={url} role="button">
+        <img src={img} className="home-button-icon" alt={img_alt} />
+        <img src={ForwardIcon} className="home-button-arrow" alt="" />
+        <h3>{title}</h3>
+      </Link>
+    </div>
+  )
 }
 
-HomePage.propTypes = {
-  loading: PropTypes.bool,
-  error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
-  repos: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
-  onSubmitForm: PropTypes.func,
-  username: PropTypes.string,
-  onChangeUsername: PropTypes.func,
-};
+function HomeLinks() {
+  return (
+    <Container>
+      <Row>
+        <Col sm={6}>
+          <Item 
+            url={links[0].url}
+            img={Image1}
+            img_alt={links[0].img_alt}
+            title={links[0].title}
+          />
+        </Col>
+        <Col sm={6}>
+          <Item 
+            url={links[1].url}
+            img={Image2}
+            img_alt={links[1].img_alt}
+            title={links[1].title}
+          />
+        </Col>
+      </Row>
+      <Row>
+        <Col sm={6}>
+          <Item 
+            url={links[2].url}
+            img={Image3}
+            img_alt={links[2].img_alt}
+            title={links[2].title}
+          />
+        </Col>
+        <Col sm={6}>
+          <Item 
+            url={links[3].url}
+            img={Image4}
+            img_alt={links[3].img_alt}
+            title={links[3].title}
+          />
+        </Col>
 
-const mapStateToProps = createStructuredSelector({
-  repos: makeSelectRepos(),
-  username: makeSelectUsername(),
-  loading: makeSelectLoading(),
-  error: makeSelectError(),
-});
-
-export function mapDispatchToProps(dispatch) {
-  return {
-    onChangeUsername: evt => dispatch(changeUsername(evt.target.value)),
-    onSubmitForm: evt => {
-      if (evt !== undefined && evt.preventDefault) evt.preventDefault();
-      dispatch(loadRepos());
-    },
-  };
+      </Row>
+    </Container>
+  )
 }
 
-const withConnect = connect(
-  mapStateToProps,
-  mapDispatchToProps,
-);
-
-export default compose(
-  withConnect,
-  memo,
-)(HomePage);
+export default HomeLinks;

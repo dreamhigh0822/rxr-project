@@ -1,0 +1,45 @@
+.home-button {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-left: 0px;
+    border-right: 0px;
+    padding: 0px;
+    margin-bottom: -1px;
+}
+
+.home-button a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0px;
+    width: 100%;
+}
+
+.home-button a:hover {
+    text-decoration: none;
+}
+
+.home-button a:hover h3 {
+    text-decoration: underline;
+}
+
+.home-button-icon {
+    float: left;
+    -webkit-filter: drop-shadow( 2px 0px 2px rgba(0, 0, 0, 0.2) );
+    filter: drop-shadow( 2px 0px 2px rgba(0, 0, 0, 0.2) );
+    margin-right: 20px;
+    width: 30px;
+}
+
+.home-button-arrow {
+    width: 15px;
+    height: 30px;
+    float: right;
+    width: 30px;
+}
+
+.home-button h3 {
+    margin: 0px 32px 0px 1px;
+    font-size: 1.2rem;
+    padding-top: 2px;
+    color: #0b4e78;
+}
