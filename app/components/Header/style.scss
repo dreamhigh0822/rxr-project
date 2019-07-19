@@ -19,3 +19,15 @@ a.dropdown-item {
 #responsive-navbar-nav-top .dropdown-menu {
     left: -5rem;
 }
+
+.modal-content-row:not(:last-child){
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.modal-content-row {
+    padding: 10px;
+}
+
+.modal-content-col {
+    font-weight: 700;
+}

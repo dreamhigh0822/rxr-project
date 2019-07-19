@@ -12,7 +12,9 @@ import {
   Nav,
   NavDropdown
 } from 'react-bootstrap';
-import { Router, Route, Link, NavLink } from "react-router-dom";
+import { Router, Route, Link, NavLink } from 'react-router-dom';
+
+import modalInfo from './messages';
 import TopLogo from 'img/logo-vaHealth.svg';
 import MenuLogo from 'img/appIcon-rxRefill.svg';
 import './style.scss';
@@ -73,25 +75,71 @@ function Header() {
         </Col>
       </Row>
 
-      <Modal show={showAbout} onHide={handleCloseAbout}>
-        <Modal.Header closeButton>
+      <Modal show={showAbout} onHide={handleCloseAbout} size="lg">
+        <Modal.Header>
           <Modal.Title>About
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body>Modal About Body</Modal.Body>
-        <Modal.Footer>
+        <Modal.Body>
+          <Container>
+            <Row className="modal-content-row">
+              <Col sm={5} className="modal-content-col">Application Name</Col>
+              <Col sm={7}>{modalInfo.about["application-name"]}</Col>
+            </Row>
+            <Row className="modal-content-row">
+              <Col sm={5} className="modal-content-col">Version Number</Col>
+              <Col sm={7}>{modalInfo.about["version-number"]}</Col>
+            </Row>
+            <Row className="modal-content-row">
+              <Col sm={5} className="modal-content-col">Developed By</Col>
+              <Col sm={7}>{modalInfo.about["developed-by"]}</Col>
+            </Row>
+            <Row className="modal-content-row">
+              <Col sm={5} className="modal-content-col">National Release Date</Col>
+              <Col sm={7}>{modalInfo.about["national-release-date"]}</Col>
+            </Row>
+            <Row className="modal-content-row">
+              <Col sm={5} className="modal-content-col">Application Description</Col>
+              <Col sm={7}><p dangerouslySetInnerHTML={{__html: modalInfo.about["application-description"]}}></p></Col>
+            </Row>
+          </Container>
+        </Modal.Body>
+        <Modal.Footer className="justify-content-start">
           <Button variant="secondary" onClick={handleCloseAbout}>
             Close
           </Button>
         </Modal.Footer>
       </Modal>
 
-      <Modal show={showHelp} onHide={handleCloseHelp}>
-        <Modal.Header closeButton>
+      <Modal show={showHelp} onHide={handleCloseHelp} size="lg">
+        <Modal.Header>
           <Modal.Title>Help</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Modal About Body</Modal.Body>
-        <Modal.Footer>
+        <Modal.Body>
+        <Container>
+            <Row className="modal-content-row">
+              <Col sm={5} className="modal-content-col">Application Name</Col>
+              <Col sm={7}>{modalInfo.about["application-name"]}</Col>
+            </Row>
+            <Row className="modal-content-row">
+              <Col sm={5} className="modal-content-col">Version Number</Col>
+              <Col sm={7}>{modalInfo.about["version-number"]}</Col>
+            </Row>
+            <Row className="modal-content-row">
+              <Col sm={5} className="modal-content-col">Developed By</Col>
+              <Col sm={7}>{modalInfo.about["developed-by"]}</Col>
+            </Row>
+            <Row className="modal-content-row">
+              <Col sm={5} className="modal-content-col">National Release Date</Col>
+              <Col sm={7}>{modalInfo.about["national-release-date"]}</Col>
+            </Row>
+            <Row className="modal-content-row">
+              <Col sm={5} className="modal-content-col">Application Description</Col>
+              <Col sm={7}><p dangerouslySetInnerHTML={{__html: modalInfo.about["application-description"]}}></p></Col>
+            </Row>
+          </Container>
+        </Modal.Body>
+        <Modal.Footer className="justify-content-start">
           <Button variant="secondary" onClick={handleCloseHelp}>
             Close
           </Button>
