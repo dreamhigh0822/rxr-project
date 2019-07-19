@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap';
 function RxTrackingList() {
     return (
         <Container>
-            <h1>RxTrackingList</h1>
+            <h1>RxTracking List</h1>
         </Container>
     )
 }

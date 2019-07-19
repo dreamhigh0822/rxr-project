@@ -4,12 +4,13 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import './style.scss';
-import Image1 from 'img/icon-refillableMeds.svg';
-import Image2 from 'img/icon-delivery.svg';
-import Image3 from 'img/icon-rxHistory.svg';
-import Image4 from 'img/icon-links.svg';
+import Image0 from 'img/icon-refillableMeds.svg';
+import Image1 from 'img/icon-delivery.svg';
+import Image2 from 'img/icon-rxHistory.svg';
+import Image3 from 'img/icon-links.svg';
 import ForwardIcon from 'img/icon-arrowForward.svg';
 
+const images = [Image0, Image1, Image2, Image3];
 function Item({url, img, img_alt, title}) {
   return (
     <div className="home-button">
@@ -26,10 +27,13 @@ function HomeLinks() {
   return (
     <Container>
       <Row>
+        <Col><h4>Home</h4></Col>
+      </Row>
+      <Row>
         <Col sm={6}>
           <Item 
             url={links[0].url}
-            img={Image1}
+            img={images[0]}
             img_alt={links[0].img_alt}
             title={links[0].title}
           />
@@ -37,7 +41,7 @@ function HomeLinks() {
         <Col sm={6}>
           <Item 
             url={links[1].url}
-            img={Image2}
+            img={images[1]}
             img_alt={links[1].img_alt}
             title={links[1].title}
           />
@@ -47,7 +51,7 @@ function HomeLinks() {
         <Col sm={6}>
           <Item 
             url={links[2].url}
-            img={Image3}
+            img={images[2]}
             img_alt={links[2].img_alt}
             title={links[2].title}
           />
@@ -55,7 +59,7 @@ function HomeLinks() {
         <Col sm={6}>
           <Item 
             url={links[3].url}
-            img={Image4}
+            img={images[3]}
             img_alt={links[3].img_alt}
             title={links[3].title}
           />

@@ -16,8 +16,8 @@ const links = [
   {
     "title": "Track Delivery",
     "img": "img/icon-delivery.svg",
-    "img_alt":"/track-delievery",
-    "url": "",
+    "img_alt":"Track Delievery",
+    "url": "/track-delivery",
     "external": false,
     "info_icon": false,
     "menu_icon": false
