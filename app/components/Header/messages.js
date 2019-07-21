@@ -35,7 +35,7 @@ const modalInfo = {
     },
     "general-feedback": {
       "title": "General Feedback to VA",
-      "content": "https://mobile.va.gov/app/rx-refill"
+      "content": "<a href='https://mobile.va.gov/app/rx-refill' target='_blank'>https://mobile.va.gov/app/rx-refill</a>"
     }
     },  
 }

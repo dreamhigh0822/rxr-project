@@ -118,24 +118,23 @@ function Header() {
         <Modal.Body>
         <Container>
             <Row className="modal-content-row">
-              <Col sm={5} className="modal-content-col">Application Name</Col>
-              <Col sm={7}>{modalInfo.about["application-name"]}</Col>
+              <Col sm={5} className="modal-content-col">{modalInfo.help.browsers.title}</Col>
+              <Col sm={7}>
+                <p>This app can be used on the following supported browers:</p>
+                {modalInfo.help["browsers-supported"].map((item, index) => <li key={index}>{item["browser-name"] + item["browser-version"]}</li>)}
+              </Col>
             </Row>
             <Row className="modal-content-row">
-              <Col sm={5} className="modal-content-col">Version Number</Col>
-              <Col sm={7}>{modalInfo.about["version-number"]}</Col>
+              <Col sm={5} className="modal-content-col">{modalInfo.help["help-desk"].title}</Col>
+              <Col sm={7}><p dangerouslySetInnerHTML={{__html: modalInfo.help["help-desk"].content}}></p></Col>
             </Row>
             <Row className="modal-content-row">
-              <Col sm={5} className="modal-content-col">Developed By</Col>
-              <Col sm={7}>{modalInfo.about["developed-by"]}</Col>
+              <Col sm={5} className="modal-content-col">{modalInfo.help["emergency"].title}</Col>
+              <Col sm={7}><p dangerouslySetInnerHTML={{__html: modalInfo.help["emergency"].content}}></p></Col>
             </Row>
             <Row className="modal-content-row">
-              <Col sm={5} className="modal-content-col">National Release Date</Col>
-              <Col sm={7}>{modalInfo.about["national-release-date"]}</Col>
-            </Row>
-            <Row className="modal-content-row">
-              <Col sm={5} className="modal-content-col">Application Description</Col>
-              <Col sm={7}><p dangerouslySetInnerHTML={{__html: modalInfo.about["application-description"]}}></p></Col>
+              <Col sm={5} className="modal-content-col">{modalInfo.help["general-feedback"].title}</Col>
+              <Col sm={7}><p dangerouslySetInnerHTML={{__html: modalInfo.help["general-feedback"].content}}></p></Col>
             </Row>
           </Container>
         </Modal.Body>
