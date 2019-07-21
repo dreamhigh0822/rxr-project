@@ -1,13 +1,13 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Modal, Button } from 'react-bootstrap';
 import './style.scss';
 
 function ImportantModal(props) {
     return (
-      <Modal {...props} aria-labelledby="importantTitle">
+      <Modal show={props.show} aria-labelledby="importantTitle">
         <Modal.Header className="important-header">
           <Modal.Title id="importantTitle" className="important-title">
-            Important Information
+            <h4>{props.title}</h4>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className="important-body">
@@ -15,8 +15,9 @@ function ImportantModal(props) {
            <p>{props.content}</p>  
           </Container>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={props.onHide}>OK</Button>
+        <Modal.Footer className="justify-content-center">
+          {props.isNoButton ? <Button variant="light" onClick={props.onHide}>No</Button> : null}
+          {props.isYesButton ? <Button variant="secondary" onClick={props.onHide}>Yes</Button> : null}
         </Modal.Footer>
       </Modal>
     );

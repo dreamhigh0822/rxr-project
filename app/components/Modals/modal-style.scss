@@ -1,5 +1,8 @@
 @import 'sass/colors.scss';
 
+.important-header {
+    padding: 0px !important;
+}
 .important-title {
     background-color: $app-primary;
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, $app-title1), color-stop(1, $app-title2));

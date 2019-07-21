@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Dropdown, Row, Col, Button, Modal } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import _ from 'lodash';
+import ImportantModal from 'components/Modals/ImportantModal';
 
 import ArrowBackIcon from 'img/icon-arrowBack.svg';
-import UserMenuUpIcon from 'img/icon-userMenuUp.svg';
 import ArrowForwardBlackIcon from 'img/icon-arrowForward-black.svg';
-import data from './fakedata';
+import InfoIcon from 'img/icon-info.svg';
+import './style.scss';
+import Data from './fakedata';
 
 
 function renderItems(items, addItem) {
@@ -20,7 +23,8 @@ function renderItems(items, addItem) {
                     <div className="link-title blue"><strong>{item.prescriptionName}</strong></div>
                     <Row>
                         <Col xs={5}>
-                            Refill Status - Popover
+                            Refill Status 
+                            <img src={InfoIcon} alt="info" style={{ width: '17px', height: '17px', marginLeft: '10%'}}/>
                         </Col>
                         <Col xs={7} className="text-capitalize status status-value"><strong>{item.refillStatus}</strong></Col>
                     </Row>
@@ -37,7 +41,7 @@ function renderItems(items, addItem) {
                         <Col xs={7}><strong>{item.dispensedDate}</strong></Col>
                     </Row>
                     <div className="center see-detail-link">
-                        <Button className="refill-detail" aria-label="See details for Prescription Number">See details
+                        <Button className="refill-detail" variant="light" aria-label="See details for Prescription Number">See details
                             <img src={ArrowForwardBlackIcon} className="forward" alt="" title="" aria-hidden="true" style={{ width: "20px", height: "20px"}} />
                         </Button>
                     </div>
@@ -50,6 +54,12 @@ function renderItems(items, addItem) {
 
 function RxList() {
     let [selectedItems, setSelectedItems] = useState([]);
+    let [data, setData] = useState(Data);
+
+    let [show, setShow] = useState(false);
+    const handleShow = () => setShow(true);
+    const handleClose = () => setShow(false);
+
     const addItem = (e) => {
         let index = selectedItems.indexOf(e.target.value)
         if ( index > -1 ) {
@@ -70,20 +80,47 @@ function RxList() {
 
     const selectAll = () => {
         let checkElements  = document.getElementsByClassName("refillcheck");
+        let selectAllButton = document.getElementsByClassName("selectall")[0];
+        let unselectButton = document.getElementsByClassName("unselect")[0];
         let items = [];
         for (let i = 0; i < checkElements.length; i++) {
             checkElements[i].checked = true;
             items.push(checkElements[i].value);
         }
         setSelectedItems(items);
+        selectAllButton.style.display = 'none';
+        unselectButton.style.display = 'block';
     }
 
     const unSelectAll = () => {
         let checkElements  = document.getElementsByClassName("refillcheck");
+        let selectAllButton = document.getElementsByClassName("selectall")[0];
+        let unselectButton = document.getElementsByClassName("unselect")[0];
+
         for (let i = 0; i < checkElements.length; i++) {
             checkElements[i].checked = false;
         }
         setSelectedItems([]);
+        selectAllButton.style.display = 'block';
+        unselectButton.style.display = 'none';
+
+    }
+
+    const sort = (e) => {
+        const sortOrder = e.target.dataset['asc'];
+        const sortVal = e.target.dataset['sort'];
+        console.log(sortOrder, sortVal);
+        let sorted = _.sortBy(data, function (item) {
+            console.log(item[sortVal]);
+            return item[sortVal];
+        });
+        console.log("!sortOrder", !sortOrder);
+        if (!sortOrder) {
+            console.log("array should be reversed");
+            sorted.reverse();
+        }
+        console.log("sorted data:", sorted);
+        setData(sorted);
     }
     return (
         <Container>
@@ -103,31 +140,47 @@ function RxList() {
                                 Sort
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                                <Dropdown.Item>Medication (A to Z)</Dropdown.Item>
-                                <Dropdown.Item>Medication (Z to A)</Dropdown.Item>
-                                <Dropdown.Item>Facility (A to Z)</Dropdown.Item>
-                                <Dropdown.Item>Facility (Z to A)</Dropdown.Item>
-                                <Dropdown.Item>Dispensed Date (Newest to Oldest)</Dropdown.Item>
-                                <Dropdown.Item>Something else</Dropdown.Item>
-                                <Dropdown.Item>Something else</Dropdown.Item>
+                                <Dropdown.Item data-asc="true" onClick={sort} data-sort="prescriptionName">Medication (A to Z)</Dropdown.Item>
+                                <Dropdown.Item data-asc="false" onClick={sort} data-sort="prescriptionName">Medication (Z to A)</Dropdown.Item>
+                                <Dropdown.Item data-asc="true" onClick={sort} data-sort="facilityName">Facility (A to Z)</Dropdown.Item>
+                                <Dropdown.Item data-asc="false" onClick={sort} data-sort="facilityName"> Facility (Z to A)</Dropdown.Item>
+                                <Dropdown.Item data-asc="true" onClick={sort} data-sort="dispensedDate">Dispensed Date (Newest to Oldest)</Dropdown.Item>
+                                <Dropdown.Item data-asc="false" onClick={sort} data-sort="dispensedDate">Dispensed Date (Oldest to Newest)</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </Col>
                 </Row>
             </Container>
             <Container id="refillListContainer">
-                <Button className="selectall" style={{marginLeft: "50px"}} onClick={selectAll}>Select All</Button>
-                <Button className="unselect" style={{marginLeft: "50px"}} onClick={unSelectAll}>Unselect All</Button>
-                <div className="list-count" tabIndex="0"><span className="selectCount">{selectedItems.length}&nbsp;</span>Selected / {data.length ? data.length : null} </div>
+                <Row>
+                   <Button className="selectall" variant="light" style={{marginLeft: "auto"}} onClick={selectAll}>Select All</Button>
+                    <Button className="unselect" variant="light" style={{marginLeft: "auto", display: "none"}} onClick={unSelectAll}>Unselect All</Button>
+                </Row>
+                <div className="list-count" tabIndex="0">
+                    <strong><span className="selectCount">{selectedItems.length}&nbsp;</span>Selected / {data.length ? data.length : null} Refillable Prescriptions</strong> 
+                </div>
                 <div className="link-items">
                     {data.length ? renderItems(data, addItem) : <div className="link-items"><p>No Records found.</p></div>}
                 </div>
-                <Button className="refillbut" style={{marginLeft: "50px"}}>Refill Selected</Button>
+                <Row style={{ padding: '10px' }}>
+                    <Button 
+                        onClick={handleShow}
+                        className="refillbut" 
+                        variant="light"
+                         style={{marginLeft: "auto"}} 
+                         tabIndex="-1">
+                             Refill Selected
+                    </Button>
+                </Row>
              </Container>
-             
-             <Modal>
-
-             </Modal>
+             <ImportantModal 
+                    show={show}
+                    title={'Confirmation'}
+                    content={'Are you sure you would like to refill all prescriptions?'}
+                    isNoButton={true}
+                    isYesButton={true}
+                    onHide={handleClose}
+             />
         </Container>
     )
 }
