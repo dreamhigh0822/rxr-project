@@ -43,11 +43,11 @@ function RxRefillDetail(props) {
                          { 1 ? 
                          <>
                             Refill status
-                            <img src={InfoIcon} alt="info" style={{ width: '20px', height: '20px'}} />
+                            <img className="status-icon" src={InfoIcon} alt="info" />
                          </> :
                          <>
                             Prescription status
-                            <img src={InfoIcon} alt="info" style={{ width: '20px', height: '20px'}} />
+                            <img className="status-icon"  src={InfoIcon} alt="info"  />
                          </>
                         }
                     </Col>
@@ -80,8 +80,8 @@ function RxRefillDetail(props) {
                      <Col sm={6}><strong>{item.expirationDate}</strong></Col>
                  </Row>
                  <br />
-                 {1 ? <div className="center"><Button className="requestRefill">Request Refill</Button></div> : null}
             </Container>
+            {1 ? <Row className="justify-content-center"><Button className="requestRefill" variant="dark">Request Refill</Button></Row> : null}
         </Container>
     )
 }

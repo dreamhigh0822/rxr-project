@@ -3,3 +3,18 @@
 .prescription-title {
     padding: 10px, 15px, 10px, 15px;
 }
+
+#refillDetailContent > .row {
+    border-bottom: 1px solid #CCCCCC;
+    padding: 10px;
+}
+
+.status-icon {
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.requestRefill {
+    margin: auto;
+}
