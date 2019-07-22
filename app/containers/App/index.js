@@ -16,6 +16,7 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import { Container } from 'react-bootstrap';
 import RxList from 'containers/RxListPage';
+import RxRefillDetail from 'containers/RxRefillDetailPage';
 import RxTrackingList from 'containers/RxTrackingListPage';
 import RxHistory from 'containers/RxHistoryPage';
 import MedicationInfo from 'containers/MedicationInfoPage';
@@ -29,7 +30,8 @@ export default function App() {
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route path="/refillable-va-medications" component={RxList} />
+        <Route exact path="/refillable-va-medications" component={RxList} />
+        <Route path="/refillable-va-medications/:id" component={RxRefillDetail} />
         <Route path="/prescription-history" component={RxHistory} />
         <Route path="/track-delivery" component={RxTrackingList} />
         <Route path="/links" component={MedicationInfo} />

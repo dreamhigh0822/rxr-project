@@ -41,7 +41,13 @@ function renderItems(items, addItem) {
                         <Col xs={7}><strong>{item.dispensedDate}</strong></Col>
                     </Row>
                     <div className="center see-detail-link">
-                        <Button className="refill-detail" variant="light" aria-label="See details for Prescription Number">See details
+                        <Button  
+                            className="refill-detail"
+                             variant="light"
+                             as={Link} 
+                             to={`/refillable-va-medications/${item.prescriptionId}`}
+                             aria-label="See details for Prescription Number">
+                                 See details
                             <img src={ArrowForwardBlackIcon} className="forward" alt="" title="" aria-hidden="true" style={{ width: "20px", height: "20px"}} />
                         </Button>
                     </div>
@@ -134,7 +140,7 @@ function RxList() {
                     <Col>
                         <h2 className="sm-phone-header" id="'content-title" tabIndex="0">Refillable VA Prescription</h2>
                     </Col>
-                    <Col md="auto">
+                    <Col md="auto" style={{ paddingRight: '0px' }}>
                         <Dropdown>
                             <Dropdown.Toggle variant="light" id="dropdown-basic">
                                 Sort
